@@ -36,24 +36,18 @@ const EXAM_DATE = "";
    ============================================================ */
 const ITEMS = [
   // — placeholders that demonstrate the format; replace these Just copy one line and paste it replace the values —
-  { title:"Hyponatriämie Untersuchungen", system:"Nephrologie", topic:"electrolytes", type:"bild", file:"files/hyponatriaemie logik.svg", size:"1 S." },
-  { title:"Hypernatriämie Untersuchungen", system:"Nephrologie", topic:"electrolytes", type:"bild", file:"files/urinuntersuchung_hypernatriaemie.svg", size:"1 S." },
- 
- { title:"BGA-Interpreter", system:"Nephrologie", topic:"Säure-Basen-Haushalt", type:"html", file:"files/bga-tool.html" },
-  { title:"DKA-Notfallschema", system:"Endokrinologie", topic:"Diabetes mellitus", type:"pdf", file:"files/dka.pdf", size:"1 S." },
-  { title:"Aufnahmebrief — Vorlage & Sprechmuster", system:"Stationsalltag & Untersuchung", topic:"Patientenvorstellung", type:"pdf", file:"files/aufnahmebrief.pdf", size:"3 S." },
-
-  // — additional Kardiologie resources (fully-realised plate) —
-  { title:"ACS — Erstmaßnahmen & Risikostratifizierung", system:"Kardiologie & Angiologie", topic:"Akutes Koronarsyndrom", type:"pdf", file:"files/acs-erstmassnahmen.pdf", size:"4 S." },
- 
+  { title:"Hyponatriämie Untersuchungen", system:"Nephrologie", topic:"Elektrolytstörungen Natrium", type:"image", file:"files/hyponatriaemie logik.svg", size:"1 S." },
+  { title:"Hypernatriämie Untersuchungen", system:"Nephrologie", topic:"Elektrolytstörungen Natrium", type:"image", file:"files/urinuntersuchung_hypernatriaemie.svg", size:"1 S." },
+  { title:"BGA-Interpreter", system:"Nephrologie", topic:"Säure-Basen-Haushalt", type:"html", file:"files/bga-tool.html" },
+  
  
   // — Notfallmedizin —
-  { title:"Akute Intoxikation Artikel", system:"Notfallmedizin", topic:"Intoxikationen", type:"html", file:"files/akuttoxikologie-kp.html", size:"1 S." },
+  { title:"Akute Intoxikation Artikel", system:"Notfallmedizin", topic:"Akute Intoxikationen", type:"html", file:"files/akuttoxikologie-kp.html", size:"1 S." },
 
  // — Untersuchungen —
-  { title:"Gerrinung: Trainer", system:"Untersuchungen", topic:"Labor", type:"html", file:"files/gerinnung-trainer.html", size:"1 S." },
-  { title:"Blutbild: Trainer", system:"Untersuchungen", topic:"Labor", type:"html", file:"files/blutbild-trainer.html", size:"1 S." },
-  { title:"BGA: Trainer", system:"Untersuchungen", topic:"Labor", type:"html", file:"files/bga-trainer.html", size:"1 S." },
+  { title:"Gerrinung: Trainer", system:"Untersuchung", topic:"Labor", type:"html", file:"files/gerinnung-trainer.html", size:"1 S." },
+  { title:"Blutbild: Trainer", system:"Untersuchung", topic:"Labor", type:"html", file:"files/blutbild-trainer.html", size:"1 S." },
+  { title:"BGA: Trainer", system:"Untersuchung", topic:"Labor", type:"html", file:"files/bga-trainer.html", size:"1 S." },
 
 
   /* — DEMO so the full 16-system atlas renders; delete this whole block to start clean — */
@@ -75,10 +69,10 @@ const CATEGORIES = {
   "Infektiologie": ["Antibiotika", "Sepsis", "Allgemeine Infektiologie", "Fieber und Entzündungsreaktionen", "HIV-Infektion", "Hepatitis B und HBV-Infektion", "Hepatitis C und HCV-Infektion", "Herpesvirus-Infektionen", "Impfempfehlungen der STIKO", "Impfungen allgemein", "Infektiöse Mononukleose", "Influenza", "Typhus, Paratyphus", "Nosokomiale Pneumonie", "Meningitis", "Bakterielle Durchfallerkrankungen", "Denguefieber", "Emerging Infectious Diseases", "FSME-Virus-Infektion", "Giardiasis", "Leishmaniose", "Lyme-Borreliose", "Malaria", "Norovirus-Infektion", "Nosokomiale Infektionen", "Schistosomiasis"],
   "Rheumatologie": ["Arthrose", "Rheumatoide Arthritis", "Axiale Spondylarthritis", "Granulomatose mit Polyangiitis", "Hyperurikämie und Gicht", "Lupus erythematodes", "Polymyalgia rheumatica", "Reaktive Arthritis", "Riesenzellarteriitis", "Vaskulitiden"],
   "Leitsymptome": ["Dyspnoe", "Schock", "Ödeme", "Akutes Abdomen", "Gastrointestinale Blutung", "Kopfschmerzen", "Schwindel", "Synkope", "Husten", "Lymphknotenschwellung", "Ikterus und Cholestase", "Durchfall", "Obstipation", "Rückenschmerzen", "Thoraxschmerz"],
-  "Notfallmedizin": ["Notfallmanagement - Grundlegende Prinzipien", "Reanimation - AMBOSS-SOP", "Schock", "Vorgehen bei Schock", "Hyperglykämisches Koma", "Hypoglykämie", "Anaphylaxie - AMBOSS-SOP", "Grundlagen der Reanimation", "Polytrauma", "Präklinische Traumaversorgung", "Schockraummanagement", "Vigilanzminderung - AMBOSS-SOP", "Ärztliche Rechtskunde", "Akute Intoxikationen - AMBOSS-SOP", "Perikarderguss und Perikardtamponade", "Status epilepticus - AMBOSS-SOP", "Transfusion von Erythrozytenkonzentraten - AMBOSS-SOP", "Vorgehen bei fremdaggressivem Verhalten - AMBOSS-SOP"],
+  "Notfallmedizin": ["Notfallmanagement - Grundlegende Prinzipien", "Reanimation - AMBOSS-SOP", "Schock", "Vorgehen bei Schock", "Hyperglykämisches Koma", "Hypoglykämie", "Anaphylaxie - AMBOSS-SOP", "Grundlagen der Reanimation", "Polytrauma", "Präklinische Traumaversorgung", "Schockraummanagement", "Vigilanzminderung - AMBOSS-SOP", "Ärztliche Rechtskunde", "Akute Intoxikationen", "Perikarderguss und Perikardtamponade", "Status epilepticus - AMBOSS-SOP", "Transfusion von Erythrozytenkonzentraten - AMBOSS-SOP", "Vorgehen bei fremdaggressivem Verhalten - AMBOSS-SOP"],
   "Chirurgie": ["Mesenteriale Ischämie", "Appendizitis", "Hernien", "Ileus", "Leistenhernie", "Milzruptur", "Peritonitis", "Zwerchfellhernie", "Schilddrüsenchirurgie", "Akute Wunden und Wundverschluss", "Bakterielle Infektionen von Haut und Weichgewebe", "Chronische Wunden und Wundbehandlung", "Darmchirurgie", "Hepatozelluläres Karzinom", "Hämorrhoiden und Hämorrhoidalleiden", "Kolonpolypen", "Perioperatives Management", "Ösophaguskarzinom", "Pneumothorax", "Akuter arterieller Extremitätenverschluss", "Aortenaneurysma", "Aneurysma", "Aortendissektion", "Thoraxtrauma"],
   "Orthopädie & Unfallchirurgie": ["Bakterielle Arthritis", "Gonarthrose", "Koxarthrose", "Bandverletzungen des Knies", "Orthopädische Untersuchungszeichen", "Schultergelenkluxation", "Orthopädische Untersuchung des Knies", "Orthopädische Untersuchung der Hüfte und des Iliosakralgelenkes", "Orthopädische Untersuchung der Schulter", "Orthopädische Untersuchung der Wirbelsäule", "Bandscheibenprolaps", "Allgemeine Frakturlehre", "Beckenringfrakturen", "Claviculafraktur", "Distale Radiusfraktur", "Femurschaft- und distale Femurfrakturen", "Frakturen im Kindesalter", "Kompartmentsyndrom", "Konservative Verfahren in der Frakturversorgung", "Luxation des Akromioklavikulargelenks", "Proximale Femurfrakturen", "Schaftfrakturen des Unterarmes", "Sprunggelenksfraktur", "Wirbelsäulenverletzungen", "Operative Verfahren der Unfallchirurgie/Orthopädie"],
-  "Untersuchung": ["Praxistipp EKG-Befundung", "Pulsoxymetrie und Blutgasanalyse", "Lungenfunktionsuntersuchung", "Urindiagnostik", "Befundung eines Röntgen-Thorax", "Rechner und Scores für den klinischen Alltag", "Ablauf einer allgemeinen körperlichen Aufnahmeuntersuchung", "Anamnese", "Auskultationskurs Herz", "Befunde und Techniken der internistischen und chirurgischen Untersuchung", "Patientenvorstellung", "Neurologische Untersuchung", "Soziale Sicherung", "Ökonomische Aspekte von Gesundheit und Krankheit", "Blickdiagnosen an Haut, Hautanhangsgebilden und Schleimhäuten", "Blickdiagnosen und wegweisende Befunde bei der klinischen Untersuchung", "Symptomkarten", "Anlage eines Blasenkatheters", "Anlage eines peripheren Venenverweilkatheters", "Blutkulturen", "Händedesinfektion Antisepsis", "Magensonde und Künstliche Ernährung", "Transfusionen", "Venöse Blutentnahme" "Labor"],
+  "Untersuchung": ["Praxistipp EKG-Befundung", "Pulsoxymetrie und Blutgasanalyse", "Lungenfunktionsuntersuchung", "Urindiagnostik", "Befundung eines Röntgen-Thorax", "Rechner und Scores für den klinischen Alltag", "Ablauf einer allgemeinen körperlichen Aufnahmeuntersuchung", "Anamnese", "Auskultationskurs Herz", "Befunde und Techniken der internistischen und chirurgischen Untersuchung", "Patientenvorstellung", "Neurologische Untersuchung", "Soziale Sicherung", "Ökonomische Aspekte von Gesundheit und Krankheit", "Blickdiagnosen an Haut, Hautanhangsgebilden und Schleimhäuten", "Blickdiagnosen und wegweisende Befunde bei der klinischen Untersuchung", "Symptomkarten", "Anlage eines Blasenkatheters", "Anlage eines peripheren Venenverweilkatheters", "Blutkulturen", "Händedesinfektion Antisepsis", "Magensonde und Künstliche Ernährung", "Transfusionen", "Venöse Blutentnahme", "Labor"],
   "Pharmakologie & Basismedikation": ["Stationäre Behandlung bei Diabetes mellitus", "Grundlagen der Schmerztherapie", "Thromboseprophylaxe (Ärztliches Wissen und Medikation)"],
   "Recht, Entlassung & Palliativmedizin": ["Arzneimittelrezept", "Verfassen eines Arztbriefes", "Behinderung und Einschränkung der Arbeitsfähigkeit", "Prävention", "Rehabilitation", "Ökonomische Aspekte von Gesundheit und Krankheit", "Ausfüllen des Totenscheins", "Breaking Bad News", "Palliativmedizin"],
   "Klinische Übungen & Skills": ["Medication-list walk-through", "Diabetic-foot examination", "Mixed package: EKG + CBC + BGA/electrolytes", "Timed Aufnahmebrief / Epikrise", "Jugular venous pressure / hepatojugular reflux", "Compression sonography basics", "Separate Wells pathways: TVT and PE", "Brief neurological screen", "Selected ulcer and skin image set", "Immune thrombocytopenia (ITP)", "Tension pneumothorax + chest-drain check", "Steroid counselling and tapering", "Resistant hypertension: secondary-cause matrix", "Safe signs of death / Todesart / patient wishes", "SBP and hepatorenal syndrome", "Femoral and radial access basics"],
@@ -578,7 +572,7 @@ const GLYPHS = {
       '<path class="gl-draw" '+P+' d="M36 19C43.5 20 47.5 28 45 36.5 43 43.5 36.5 44.5 33.5 39 31.5 34 33 25.5 36 19Z"/>'+
       '<path class="gl-draw gl-thin" '+P+' d="M30 33H34"/>'+
       '<path class="gl-draw gl-thin" '+P+' d="M32 19V11"/>'),
-    "Stationsalltag & Untersuchung": svg(
+    "Untersuchung": svg(
       '<path class="gl-draw" '+P+' d="M18.5 16.5C18.5 15.1 19.6 14 21 14H43C44.4 14 45.5 15.1 45.5 16.5V51.5C45.5 52.9 44.4 54 43 54H21C19.6 54 18.5 52.9 18.5 51.5Z"/>'+
       '<path class="gl-draw gl-thin" '+P+' d="M26.5 11.5H37.5V17H26.5Z"/>'+
       '<path class="gl-draw gl-thin" '+P+' d="M24.5 27H39.5"/>'+
@@ -657,7 +651,7 @@ const GLYPHS = {
       '<path class="gl-draw" '+P+' d="M35.5 18C44 18.5 48.5 27.5 45.5 37 43.2 44.5 36 45.5 33 39.5 30.8 35 32.2 25 35.5 18Z"/>'+
       '<path class="gl-draw gl-thin" '+P+' d="M29.5 32.5C31 34 33 34 34.5 32.5"/>'+
       '<path class="gl-draw gl-thin" '+P+' d="M32 18.5C31 14 32.5 11 35 10"/>'),
-    "Stationsalltag & Untersuchung": svg(
+    "Untersuchung": svg(
       '<path class="gl-draw" '+P+' d="M20.5 13.5C20 13.5 19.5 14 19.5 14.6V53C19.5 53.7 20 54 20.6 54H43.5C44.2 54 44.5 53.5 44.5 53V21.5L37 13.5Z"/>'+
       '<path class="gl-draw gl-thin" '+P+' d="M37 13.5V21.5H44.5"/>'+
       '<path class="gl-draw gl-thin" '+P+' d="M25.5 31C28 33 31 33 34 31"/>'+
@@ -691,7 +685,7 @@ const SYSTEM_META = {
   "Notfallmedizin":                  { c:"var(--c-not)", code:"NOT" },
   "Chirurgie":                       { c:"var(--c-chi)", code:"CHI" },
   "Orthopädie & Unfallchirurgie":    { c:"var(--c-ort)", code:"ORT" },
-  "Stationsalltag & Untersuchung":   { c:"var(--c-sta)", code:"STA" },
+  "Untersuchung":                    { c:"var(--c-sta)", code:"UNT" },
   "Pharmakologie & Basismedikation": { c:"var(--c-pha)", code:"PHA" },
   "Recht, Entlassung & Palliativmedizin": { c:"var(--c-rec)", code:"REC" },
   "Klinische Übungen & Skills":      { c:"var(--c-ueb)", code:"UEB" },
