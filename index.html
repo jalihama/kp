@@ -18,7 +18,7 @@
    ① CONFIG
    ============================================================ */
 
-// Optional exam-date countdown. Set "2026-07-15" to show a
+// Optional exam-date countdown. Set "YYYY-MM-DD" to show a
 // "noch N Tage bis zur Prüfung" plate. Leave "" to hide it.
 const EXAM_DATE = "";
 
@@ -36,9 +36,10 @@ const EXAM_DATE = "";
    ============================================================ */
 const ITEMS = [
   // — placeholders that demonstrate the format; replace these —
-  { title:"Hyponatriämie Untersuchungen", system:"Nephrologie", topic:"Labor", type:"Bild", file:"files/hyponatriaemie logik.svg", size:"1 S." },
-  { title:"VHF — Management auf einen Blick", system:"Kardiologie & Angiologie", topic:"Vorhofflimmern", type:"image", file:"files/vhf-management.png" },
-  { title:"BGA-Interpreter", system:"Nephrologie", topic:"Säure-Basen-Haushalt", type:"html", file:"files/bga-tool.html" },
+  { title:"Hyponatriämie Untersuchungen", system:"Nephrologie", topic:"electrolytes", type:"bild", file:"hyponatriaemie logik.svg", size:"1 S." },
+  { title:"Hypernatriämie Untersuchungen", system:"Nephrologie", topic:"electrolytes", type:"bild", file:"urinuntersuchung_hypernatriaemie.svg", size:"1 S." },
+ 
+ { title:"BGA-Interpreter", system:"Nephrologie", topic:"Säure-Basen-Haushalt", type:"html", file:"files/bga-tool.html" },
   { title:"DKA-Notfallschema", system:"Endokrinologie", topic:"Diabetes mellitus", type:"pdf", file:"files/dka.pdf", size:"1 S." },
   { title:"Aufnahmebrief — Vorlage & Sprechmuster", system:"Stationsalltag & Untersuchung", topic:"Patientenvorstellung", type:"pdf", file:"files/aufnahmebrief.pdf", size:"3 S." },
 
@@ -51,31 +52,11 @@ const ITEMS = [
   { title:"CHA₂DS₂-VASc & HAS-BLED erklärt", system:"Kardiologie & Angiologie", topic:"Vorhofflimmern", type:"video", file:"https://www.youtube.com/watch?v=dQw4w9WgXcQ", size:"14 min" },
   { title:"Koronarangiographie — Befunde lesen", system:"Kardiologie & Angiologie", topic:"Koronare Herzkrankheit", type:"link", file:"https://www.amboss.com" },
 
+  // — Notfallmedizin —
+  { title:"Akute Intoxikation Artikel", system:"Notfallmedizin", topic:"Intoxikationen", type:"html", file:"akuttoxikologie-kp.html", size:"" },
+
+
   /* — DEMO so the full 16-system atlas renders; delete this whole block to start clean — */
-  { title:"Asthma vs. COPD — Differenzialtherapie", system:"Pneumologie", topic:"Chronisch-obstruktive Lungenerkrankung", type:"pdf", file:"files/asthma-copd.pdf", size:"3 S." },
-  { title:"Pneumonie — CRB-65 & kalkulierte Antibiose", system:"Pneumologie", topic:"Ambulant erworbene Pneumonie", type:"image", file:"files/crb65.png" },
-  { title:"Akutes Abdomen — diagnostischer Algorithmus", system:"Gastroenterologie", topic:"Akute Pankreatitis", type:"pdf", file:"files/akutes-abdomen.pdf", size:"2 S." },
-  { title:"Child-Pugh & MELD — Rechner", system:"Gastroenterologie", topic:"Leberzirrhose", type:"html", file:"files/child-pugh.html" },
-  { title:"Anämie-Abklärung nach MCV", system:"Hämatologie & Onkologie", topic:"Anämie", type:"image", file:"files/anaemie-mcv.png" },
-  { title:"Tumorlyse-Syndrom — Prophylaxe & Therapie", system:"Hämatologie & Onkologie", topic:"Akute Leukämie", type:"pdf", file:"files/tls.pdf", size:"2 S." },
-  { title:"Sepsis — 1-Stunden-Bundle", system:"Infektiologie", topic:"Sepsis", type:"pdf", file:"files/sepsis-bundle.pdf", size:"1 S." },
-  { title:"Kalkulierte Antibiose — Spickzettel", system:"Infektiologie", topic:"Antibiotika", type:"image", file:"files/antibiotika.png" },
-  { title:"DMARD-Übersicht (Basistherapeutika)", system:"Rheumatologie", topic:"Rheumatoide Arthritis", type:"pdf", file:"files/dmard.pdf", size:"2 S." },
-  { title:"Thoraxschmerz — DD & Red Flags", system:"Leitsymptome", topic:"Thoraxschmerz", type:"pdf", file:"files/thoraxschmerz.pdf", size:"2 S." },
-  { title:"Synkope — Abklärungspfad", system:"Leitsymptome", topic:"Synkope", type:"html", file:"files/synkope.html" },
-  { title:"ALS-Algorithmus (Reanimation)", system:"Notfallmedizin", topic:"Grundlagen der Reanimation", type:"image", file:"files/als.png" },
-  { title:"Anaphylaxie — Sofortmaßnahmen", system:"Notfallmedizin", topic:"Anaphylaxie - AMBOSS-SOP", type:"pdf", file:"files/anaphylaxie.pdf", size:"1 S." },
-  { title:"Appendizitis — Scores & Vorgehen", system:"Chirurgie", topic:"Appendizitis", type:"pdf", file:"files/appendizitis.pdf", size:"2 S." },
-  { title:"Ileus — konservativ vs. operativ", system:"Chirurgie", topic:"Ileus", type:"image", file:"files/ileus.png" },
-  { title:"AO-Frakturklassifikation — Kurzüberblick", system:"Orthopädie & Unfallchirurgie", topic:"Allgemeine Frakturlehre", type:"pdf", file:"files/ao-klassifikation.pdf", size:"3 S." },
-  { title:"Schulteruntersuchung — Tests im Video", system:"Orthopädie & Unfallchirurgie", topic:"Orthopädische Untersuchung der Schulter", type:"video", file:"https://www.youtube.com/watch?v=dQw4w9WgXcQ", size:"11 min" },
-  { title:"Schmerztherapie — WHO-Stufenschema", system:"Pharmakologie & Basismedikation", topic:"Grundlagen der Schmerztherapie", type:"pdf", file:"files/who-schema.pdf", size:"1 S." },
-  { title:"Thromboseprophylaxe — Dosierungen", system:"Pharmakologie & Basismedikation", topic:"Thromboseprophylaxe (Ärztliches Wissen und Medikation)", type:"image", file:"files/thromboseprophylaxe.png" },
-  { title:"Arztbrief — Aufbau & Textbausteine", system:"Recht, Entlassung & Palliativmedizin", topic:"Verfassen eines Arztbriefes", type:"pdf", file:"files/arztbrief.pdf", size:"2 S." },
-  { title:"Totenschein — korrekt ausfüllen", system:"Recht, Entlassung & Palliativmedizin", topic:"Ausfüllen des Totenscheins", type:"pdf", file:"files/totenschein.pdf", size:"1 S." },
-  { title:"Breaking Bad News — SPIKES-Modell", system:"Recht, Entlassung & Palliativmedizin", topic:"Breaking Bad News", type:"link", file:"https://www.amboss.com" },
-  { title:"Timed Aufnahmebrief — Übung", system:"Klinische Übungen & Skills", topic:"Timed Aufnahmebrief / Epikrise", type:"html", file:"files/uebung-aufnahmebrief.html" },
-  { title:"Mixed-Paket: EKG + CBC + BGA", system:"Klinische Übungen & Skills", topic:"Mixed package: EKG + CBC + BGA/electrolytes", type:"pdf", file:"files/mixed-paket.pdf", size:"4 S." },
 ];
 
 
@@ -510,7 +491,6 @@ body.viewer-open{ overflow:hidden; }
 <button class="rail-toggle" id="railToggle" aria-label="Systemindex öffnen" aria-controls="rail" aria-expanded="false">
   <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 4h14M2 9h14M2 14h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
 </button>
-<div class="rail-scrim" id="railScrim"></div>
 
 <div class="app">
   <aside class="rail" id="rail" aria-label="Systemindex">
@@ -522,6 +502,7 @@ body.viewer-open{ overflow:hidden; }
     <div class="rail-head"><span>Systeme</span><span id="railSysCount">—</span></div>
     <nav class="rail-list" id="railList"></nav>
   </aside>
+  <div class="rail-scrim" id="railScrim"></div>
 
   <main class="stage">
     <header class="masthead">
