@@ -35,25 +35,20 @@ const EXAM_DATE = "";
       size   : optional ("1,2 MB", "12 S.", "8 min" …) — shown if present
    ============================================================ */
 const ITEMS = [
-  // — placeholders that demonstrate the format; replace these —
-  { title:"Hyponatriämie Untersuchungen", system:"Nephrologie", topic:"electrolytes", type:"bild", file:"hyponatriaemie logik.svg", size:"1 S." },
-  { title:"Hypernatriämie Untersuchungen", system:"Nephrologie", topic:"electrolytes", type:"bild", file:"urinuntersuchung_hypernatriaemie.svg", size:"1 S." },
+  // — placeholders that demonstrate the format; replace these Just copy one line and paste it replace the values —
  
- { title:"BGA-Interpreter", system:"Nephrologie", topic:"Säure-Basen-Haushalt", type:"html", file:"files/bga-tool.html" },
-  { title:"DKA-Notfallschema", system:"Endokrinologie", topic:"Diabetes mellitus", type:"pdf", file:"files/dka.pdf", size:"1 S." },
-  { title:"Aufnahmebrief — Vorlage & Sprechmuster", system:"Stationsalltag & Untersuchung", topic:"Patientenvorstellung", type:"pdf", file:"files/aufnahmebrief.pdf", size:"3 S." },
-
-  // — additional Kardiologie resources (fully-realised plate) —
-  { title:"ACS — Erstmaßnahmen & Risikostratifizierung", system:"Kardiologie & Angiologie", topic:"Akutes Koronarsyndrom", type:"pdf", file:"files/acs-erstmassnahmen.pdf", size:"4 S." },
-  { title:"Herzinsuffizienz — Stufentherapie (HFrEF)", system:"Kardiologie & Angiologie", topic:"Herzinsuffizienz", type:"image", file:"files/hi-stufentherapie.png" },
-  { title:"Wells-Score & Algorithmus Lungenembolie", system:"Kardiologie & Angiologie", topic:"Lungenembolie", type:"html", file:"files/wells-le.html" },
-  { title:"DOAK — Dosierung, Umstellung, Bridging", system:"Kardiologie & Angiologie", topic:"Orale Antikoagulanzien", type:"pdf", file:"files/doak-dosierung.pdf", size:"2 S." },
-  { title:"Herzgeräusche — Auskultationsbeispiele", system:"Kardiologie & Angiologie", topic:"Herzklappenerkrankungen", type:"audio", file:"files/herzgeraeusche.mp3", size:"9 min" },
-  { title:"CHA₂DS₂-VASc & HAS-BLED erklärt", system:"Kardiologie & Angiologie", topic:"Vorhofflimmern", type:"video", file:"https://www.youtube.com/watch?v=dQw4w9WgXcQ", size:"14 min" },
-  { title:"Koronarangiographie — Befunde lesen", system:"Kardiologie & Angiologie", topic:"Koronare Herzkrankheit", type:"link", file:"https://www.amboss.com" },
-
+ // — Nephrologie —
+  { title:"Hyponatriämie Untersuchungen", system:"Nephrologie", topic:"electrolytes", type:"bild", file:"files/hyponatriaemie logik.svg", size:"1 S." },
+  { title:"Hypernatriämie Untersuchungen", system:"Nephrologie", topic:"electrolytes", type:"bild", file:"files/urinuntersuchung_hypernatriaemie.svg", size:"1 S." },
+  
+ 
   // — Notfallmedizin —
   { title:"Akute Intoxikation Artikel", system:"Notfallmedizin", topic:"Intoxikationen", type:"html", file:"files/akuttoxikologie-kp.html", size:"1 S." },
+
+ // — Untersuchungen —
+  { title:"Gerrinung: Trainer", system:"Untersuchungen", topic:"Labor", type:"html", file:"files/gerinnung-trainer.html", size:"1 S." },
+  { title:"Blutbild: Trainer", system:"Untersuchungen", topic:"Labor", type:"html", file:"files/blutbild-trainer.html", size:"1 S." },
+  { title:"BGA: Trainer", system:"Untersuchungen", topic:"Labor", type:"html", file:"files/bga-trainer.html", size:"1 S." },
 
 
   /* — DEMO so the full 16-system atlas renders; delete this whole block to start clean — */
@@ -78,7 +73,7 @@ const CATEGORIES = {
   "Notfallmedizin": ["Notfallmanagement - Grundlegende Prinzipien", "Reanimation - AMBOSS-SOP", "Schock", "Vorgehen bei Schock", "Hyperglykämisches Koma", "Hypoglykämie", "Anaphylaxie - AMBOSS-SOP", "Grundlagen der Reanimation", "Polytrauma", "Präklinische Traumaversorgung", "Schockraummanagement", "Vigilanzminderung - AMBOSS-SOP", "Ärztliche Rechtskunde", "Akute Intoxikationen - AMBOSS-SOP", "Perikarderguss und Perikardtamponade", "Status epilepticus - AMBOSS-SOP", "Transfusion von Erythrozytenkonzentraten - AMBOSS-SOP", "Vorgehen bei fremdaggressivem Verhalten - AMBOSS-SOP"],
   "Chirurgie": ["Mesenteriale Ischämie", "Appendizitis", "Hernien", "Ileus", "Leistenhernie", "Milzruptur", "Peritonitis", "Zwerchfellhernie", "Schilddrüsenchirurgie", "Akute Wunden und Wundverschluss", "Bakterielle Infektionen von Haut und Weichgewebe", "Chronische Wunden und Wundbehandlung", "Darmchirurgie", "Hepatozelluläres Karzinom", "Hämorrhoiden und Hämorrhoidalleiden", "Kolonpolypen", "Perioperatives Management", "Ösophaguskarzinom", "Pneumothorax", "Akuter arterieller Extremitätenverschluss", "Aortenaneurysma", "Aneurysma", "Aortendissektion", "Thoraxtrauma"],
   "Orthopädie & Unfallchirurgie": ["Bakterielle Arthritis", "Gonarthrose", "Koxarthrose", "Bandverletzungen des Knies", "Orthopädische Untersuchungszeichen", "Schultergelenkluxation", "Orthopädische Untersuchung des Knies", "Orthopädische Untersuchung der Hüfte und des Iliosakralgelenkes", "Orthopädische Untersuchung der Schulter", "Orthopädische Untersuchung der Wirbelsäule", "Bandscheibenprolaps", "Allgemeine Frakturlehre", "Beckenringfrakturen", "Claviculafraktur", "Distale Radiusfraktur", "Femurschaft- und distale Femurfrakturen", "Frakturen im Kindesalter", "Kompartmentsyndrom", "Konservative Verfahren in der Frakturversorgung", "Luxation des Akromioklavikulargelenks", "Proximale Femurfrakturen", "Schaftfrakturen des Unterarmes", "Sprunggelenksfraktur", "Wirbelsäulenverletzungen", "Operative Verfahren der Unfallchirurgie/Orthopädie"],
-  "Stationsalltag & Untersuchung": ["Praxistipp EKG-Befundung", "Pulsoxymetrie und Blutgasanalyse", "Lungenfunktionsuntersuchung", "Urindiagnostik", "Befundung eines Röntgen-Thorax", "Rechner und Scores für den klinischen Alltag", "Ablauf einer allgemeinen körperlichen Aufnahmeuntersuchung", "Anamnese", "Auskultationskurs Herz", "Befunde und Techniken der internistischen und chirurgischen Untersuchung", "Patientenvorstellung", "Neurologische Untersuchung", "Soziale Sicherung", "Ökonomische Aspekte von Gesundheit und Krankheit", "Blickdiagnosen an Haut, Hautanhangsgebilden und Schleimhäuten", "Blickdiagnosen und wegweisende Befunde bei der klinischen Untersuchung", "Symptomkarten", "Anlage eines Blasenkatheters", "Anlage eines peripheren Venenverweilkatheters", "Blutkulturen", "Händedesinfektion Antisepsis", "Magensonde und Künstliche Ernährung", "Transfusionen", "Venöse Blutentnahme"],
+  "Untersuchung": ["Praxistipp EKG-Befundung", "Pulsoxymetrie und Blutgasanalyse", "Lungenfunktionsuntersuchung", "Urindiagnostik", "Befundung eines Röntgen-Thorax", "Rechner und Scores für den klinischen Alltag", "Ablauf einer allgemeinen körperlichen Aufnahmeuntersuchung", "Anamnese", "Auskultationskurs Herz", "Befunde und Techniken der internistischen und chirurgischen Untersuchung", "Patientenvorstellung", "Neurologische Untersuchung", "Soziale Sicherung", "Ökonomische Aspekte von Gesundheit und Krankheit", "Blickdiagnosen an Haut, Hautanhangsgebilden und Schleimhäuten", "Blickdiagnosen und wegweisende Befunde bei der klinischen Untersuchung", "Symptomkarten", "Anlage eines Blasenkatheters", "Anlage eines peripheren Venenverweilkatheters", "Blutkulturen", "Händedesinfektion Antisepsis", "Magensonde und Künstliche Ernährung", "Transfusionen", "Venöse Blutentnahme" "Labor"],
   "Pharmakologie & Basismedikation": ["Stationäre Behandlung bei Diabetes mellitus", "Grundlagen der Schmerztherapie", "Thromboseprophylaxe (Ärztliches Wissen und Medikation)"],
   "Recht, Entlassung & Palliativmedizin": ["Arzneimittelrezept", "Verfassen eines Arztbriefes", "Behinderung und Einschränkung der Arbeitsfähigkeit", "Prävention", "Rehabilitation", "Ökonomische Aspekte von Gesundheit und Krankheit", "Ausfüllen des Totenscheins", "Breaking Bad News", "Palliativmedizin"],
   "Klinische Übungen & Skills": ["Medication-list walk-through", "Diabetic-foot examination", "Mixed package: EKG + CBC + BGA/electrolytes", "Timed Aufnahmebrief / Epikrise", "Jugular venous pressure / hepatojugular reflux", "Compression sonography basics", "Separate Wells pathways: TVT and PE", "Brief neurological screen", "Selected ulcer and skin image set", "Immune thrombocytopenia (ITP)", "Tension pneumothorax + chest-drain check", "Steroid counselling and tapering", "Resistant hypertension: secondary-cause matrix", "Safe signs of death / Todesart / patient wishes", "SBP and hepatorenal syndrome", "Femoral and radial access basics"],
